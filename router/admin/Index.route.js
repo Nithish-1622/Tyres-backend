@@ -6,7 +6,6 @@ const { rolecheck } = require("../../Utils/Role");
 const AssignShopsInfo = require("./Distance.route");
 const ShopSummary = require("./ShopSummary.route");
 const TyreRequests = require("./TyreRequests.route");
-const Carwash = require("./Carwash.route");
 const report = require("./Report.route");
 const OrderSummaryByShop = require("./OrderSummaryByShop.route");
 const OrderSummaryByDate = require("./OrderSummaryByDate.route");
@@ -27,7 +26,6 @@ route.use(
 );
 route.use("/tyrerequests", authenticateJWT, rolecheck("admin"), TyreRequests);
 route.use("/report", authenticateJWT, rolecheck("admin"), report);
-route.use("/carwash", authenticateJWT, rolecheck("admin"), Carwash);
 route.use(
   "/ordersummary",
   authenticateJWT,
